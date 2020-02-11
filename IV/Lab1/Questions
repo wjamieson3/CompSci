@@ -1,0 +1,9 @@
+1. In what order should exception handlers appear?
+
+2. How should an Error be handled in contrast to an Exception?
+
+3. Besides Object, what class are all Errors and Exceptions inheriting from? What are some methods that are inherited?
+
+4. What are some exceptions that may occur when dealing with IO (input/output)?
+
+5. What are the key differences between checked and unchecked exceptions?
