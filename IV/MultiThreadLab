@@ -1,0 +1,106 @@
+package multiThreadLab;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		/*
+		 * Objective 1: Create and start two threads that use the same BankAccount
+		 * instance. One will deposit $300 into the account, and then withdraw $50. The
+		 * other will deposit $203.75 and then withdraw $100.
+		 * 
+		 * 
+		 * Objective 2: Make the BankAccount class Threadsafe using the synchronized
+		 * keyword. Only synchronize what is absolutely necessary.
+		 * 
+		 * 
+		 * Objective 3: Make BankAccount2 Threadsafe through the use of a ReentrantLock.
+		 * Change your threads to share a BankAccount2 instance for testing. Make sure
+		 * to lock() and unlock() only crucial parts of the code.
+		 * 
+		 * 
+		 * Objective 4: Change your BankAccount2 class to make use of tryLock() with a
+		 * timeout. To properly use a Lock it requires a try-finally.
+		 * 
+		 * 
+		 * Objective 5: Edit the TicketMachine class to include a collection, or
+		 * multiple, of movie titles and available tickets. Each movie should have a set
+		 * amount of available tickets. You should then make threads that act as ticket
+		 * kiosks for customers to purchase tickets. You do not have to keep track of
+		 * customers' currency, but you should keep track of total revenue and number of
+		 * tickets sold.
+		 * 
+		 * The kiosks cannot sell more tickets than are available. Kiosks can randomly
+		 * try to purchase from the available movies. You may use any method of
+		 * synchronicity.
+		 * 
+		 */
+
+		BankAccount account = new BankAccount("12345-678", 1000.00);
+
+	}
+
+}
+
+class BankAccount {
+
+	private double balance;
+	private String accountNumber;
+
+	public BankAccount(String accountNumber, double initialBalance) {
+		this.accountNumber = accountNumber;
+		this.balance = initialBalance;
+	}
+
+	public void deposit(double amount) {
+		balance += amount;
+	}
+
+	public void withdraw(double amount) {
+		balance -= amount;
+	}
+
+	public String getAccountNumber() {
+		return accountNumber;
+	}
+
+	public void printAccountNumber() {
+		System.out.println("Account Number: " + accountNumber);
+	}
+
+}
+
+class BankAccount2 {
+
+	private double balance;
+	private String accountNumber;
+
+	public BankAccount2(String accountNumber, double initialBalance) {
+		this.accountNumber = accountNumber;
+		this.balance = initialBalance;
+	}
+
+	public void deposit(double amount) {
+		balance += amount;
+	}
+
+	public void withdraw(double amount) {
+		balance -= amount;
+	}
+
+	public String getAccountNumber() {
+		return accountNumber;
+	}
+
+	public void printAccountNumber() {
+		System.out.println("Account Number: " + accountNumber);
+	}
+
+}
+
+class TicketMachine {
+
+}
