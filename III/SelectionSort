@@ -1,0 +1,35 @@
+package sorting;
+
+public class SelectionSort {
+	private int[] a;
+
+	public SelectionSort(int[] arr) {
+		a = arr;
+	}
+
+	private void swap(int i, int j) {
+		int temp = a[i];
+		a[i] = a[j];
+		a[j] = temp;
+	}
+
+	public void selectionSort() {
+		int maxPos, max;
+
+		for (int i = 0; i < a.length - 1; i++) {
+
+			// find max element in a[i+1] to a[a.length-1]
+			max = a[i];
+			maxPos = i;
+
+			for (int j = i + 1; j < a.length; j++) {
+				if (max < a[j]) {
+					max = a[j];
+					maxPos = j;
+				}
+
+				swap(i, maxPos); // swap a[i] and a[maxPos]
+			}
+		}
+	}
+}
