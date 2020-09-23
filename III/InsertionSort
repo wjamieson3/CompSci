@@ -1,0 +1,20 @@
+public class InsertionSort {
+	private int a[];
+	
+	public InsertionSort(int[] arr) {
+		a = arr;
+	}
+	
+	void insertionSort() 
+    { 
+		for (int j = 1; j < a.length; j++) {
+	        int current = a[j];
+	        int i = j-1;
+	        while ((i > -1) && (a[i] > current)) {
+	            a[i+1] = a[i];
+	            i--;
+	        }
+	        a[i+1] = current;
+	    }
+    } 
+}
