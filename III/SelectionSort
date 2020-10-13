@@ -27,9 +27,9 @@ public class SelectionSort {
 					max = a[j];
 					maxPos = j;
 				}
-
-				swap(i, maxPos); // swap a[i] and a[maxPos]
 			}
+			
+			swap(i, maxPos); // swap a[i] and a[maxPos]
 		}
 	}
 }
